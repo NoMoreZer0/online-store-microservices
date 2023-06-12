@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package com.kz;
+
+message Stock {
+  string skuCode = 1;
+  string name = 2;
+}
+
+service StockService {
+  rpc getStockBySkuCode(Stock) returns(Stock){}
+}

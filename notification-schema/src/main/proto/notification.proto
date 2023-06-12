@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package com.kz;
+
+message NotificationRequest {
+  string email = 1;
+  string msg = 2;
+}
+
+message NotificationResponse {
+  string status = 1;
+}
+
+service NotificationService {
+  rpc sendEmail(NotificationRequest) returns(NotificationResponse){}
+}

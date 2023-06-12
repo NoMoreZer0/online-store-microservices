@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package com.kz;
+
+message Order {
+  string orderCode = 1;
+  string skuCode = 2;
+  string email = 3;
+  string status = 4;
+}
+
+message OrderResponse {
+  string orderCode = 1;
+}
+
+message OrderRequest {
+  string orderCode = 1;
+}
+
+service OrderService {
+  rpc createOrder(Order) returns(OrderResponse) {}
+  rpc getOrderByCode(OrderRequest) returns (Order){}
+}
