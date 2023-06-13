@@ -8,8 +8,10 @@ import net.devh.boot.grpc.server.service.GrpcService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Service;
 
 @GrpcService
+@Service
 public class EmailSenderService extends NotificationServiceGrpc.NotificationServiceImplBase {
     private JavaMailSender javaMailSender;
 
